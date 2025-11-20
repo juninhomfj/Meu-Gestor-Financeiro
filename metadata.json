@@ -1,5 +1,5 @@
 {
-  "name": "Meu Gestor Financeiro",
+  "name": "MGF -  Meu Gestor Financeiro",
   "description": "Sistema financeiro completo com tema escuro metálico, gestão de contas PF/PJ, distribuição de lucros e dashboards.",
   "requestFramePermissions": [
     "microphone"
