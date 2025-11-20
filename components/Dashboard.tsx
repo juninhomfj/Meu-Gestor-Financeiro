@@ -81,6 +81,10 @@ const Dashboard: React.FC<DashboardProps> = ({ transactions, receivables }) => {
       
       const base64Audio = await AIService.generateSpeech(summaryText);
       
+      if (!base64Audio) {
+        throw new Error("Não foi possível gerar o áudio.");
+      }
+
       // Decode Base64 to Blob -> URL
       const binaryString = window.atob(base64Audio);
       const len = binaryString.length;

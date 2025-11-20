@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { GoogleGenAI, LiveServerMessage, Modality, Type, FunctionDeclaration } from '@google/genai';
 import { Mic, X, Radio, Activity, Zap } from 'lucide-react';
@@ -185,7 +186,7 @@ const VoiceAssistant: React.FC<VoiceAssistantProps> = ({ isOpen, onClose, onAddT
           },
           onmessage: async (msg: LiveServerMessage) => {
             // Handle Tool Calls (Transaction Addition)
-            if (msg.toolCall) {
+            if (msg.toolCall && msg.toolCall.functionCalls) {
               setStatus('processing');
               for (const fc of msg.toolCall.functionCalls) {
                 if (fc.name === 'addTransaction') {
